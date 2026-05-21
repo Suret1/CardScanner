@@ -1,0 +1,308 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.surat.cardscanner.sample"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->INJECTED
+8        android:minSdkVersion="26"
+8-->INJECTED
+9        android:targetSdkVersion="36" />
+9-->INJECTED
+10
+11    <uses-feature
+11-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:5-10:36
+12        android:name="android.hardware.camera"
+12-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:9-47
+13        android:required="false" />
+13-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:9-33
+14
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:12:5-65
+15-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:12:22-62
+16    <uses-permission android:name="android.permission.VIBRATE" />
+16-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:13:5-66
+16-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:13:22-63
+17
+18    <permission
+18-->[androidx.core:core:1.18.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\cddf8515e6deff3a4b7a2a4192634271\transformed\core-1.18.0\AndroidManifest.xml:22:5-24:47
+19        android:name="com.surat.cardscanner.sample.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+19-->[androidx.core:core:1.18.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\cddf8515e6deff3a4b7a2a4192634271\transformed\core-1.18.0\AndroidManifest.xml:23:9-81
+20        android:protectionLevel="signature" />
+20-->[androidx.core:core:1.18.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\cddf8515e6deff3a4b7a2a4192634271\transformed\core-1.18.0\AndroidManifest.xml:24:9-44
+21
+22    <uses-permission android:name="com.surat.cardscanner.sample.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+22-->[androidx.core:core:1.18.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\cddf8515e6deff3a4b7a2a4192634271\transformed\core-1.18.0\AndroidManifest.xml:26:5-97
+22-->[androidx.core:core:1.18.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\cddf8515e6deff3a4b7a2a4192634271\transformed\core-1.18.0\AndroidManifest.xml:26:22-94
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->[androidx.media3:media3-common:1.9.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ff09210c4fc357ac1f669bf598ab4524\transformed\media3-common-1.9.0\AndroidManifest.xml:22:5-79
+23-->[androidx.media3:media3-common:1.9.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ff09210c4fc357ac1f669bf598ab4524\transformed\media3-common-1.9.0\AndroidManifest.xml:22:22-76
+24    <uses-permission android:name="android.permission.INTERNET" />
+24-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
+24-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:26:22-64
+25
+26    <application
+26-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:5:5-21:19
+27        android:allowBackup="true"
+27-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:6:9-35
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.18.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\cddf8515e6deff3a4b7a2a4192634271\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
+29        android:dataExtractionRules="@xml/data_extraction_rules"
+29-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:17:9-65
+30        android:debuggable="true"
+31        android:extractNativeLibs="false"
+31-->INJECTED
+32        android:fullBackupContent="@xml/backup_rules"
+32-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:18:9-54
+33        android:icon="@mipmap/ic_launcher"
+33-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:19:9-43
+34        android:label="CardScanner Sample"
+34-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:7:9-43
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:21:9-54
+36        android:supportsRtl="true"
+36-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:8:9-35
+37        android:testOnly="true"
+38        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" >
+38-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:9:9-77
+39        <activity
+39-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:12:9-19:20
+40            android:name="com.surat.cardscanner.sample.MainActivity"
+40-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:13:13-41
+41            android:exported="true" >
+41-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:14:13-36
+42            <intent-filter>
+42-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:15:13-18:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:16:17-69
+43-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:16:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:17:17-77
+45-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:17:27-74
+46            </intent-filter>
+47        </activity>
+48        <activity
+48-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:24:9-34:20
+49            android:name="com.surat.cardscanner.CardScannerActivity"
+49-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:25:13-69
+50            android:exported="true"
+50-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:26:13-36
+51            android:label="@string/app_name"
+51-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:27:13-45
+52            android:theme="@style/Theme.CardScanner" >
+52-->[:app] C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\app\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:28:13-53
+53            <intent-filter>
+53-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:15:13-18:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:16:17-69
+54-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:16:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:17:17-77
+56-->C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\AndroidManifest.xml:17:27-74
+57            </intent-filter>
+58        </activity>
+59        <!--
+60        Service for holding metadata. Cannot be instantiated.
+61        Metadata will be merged from other manifests.
+62        -->
+63        <service
+63-->[androidx.camera:camera-core:1.6.1] C:\Users\Surat\.gradle\caches\9.4.1\transforms\02aa2989c3e00874315aff8e33b17e08\transformed\camera-core-1.6.1\AndroidManifest.xml:29:9-33:78
+64            android:name="androidx.camera.core.impl.MetadataHolderService"
+64-->[androidx.camera:camera-core:1.6.1] C:\Users\Surat\.gradle\caches\9.4.1\transforms\02aa2989c3e00874315aff8e33b17e08\transformed\camera-core-1.6.1\AndroidManifest.xml:30:13-75
+65            android:enabled="false"
+65-->[androidx.camera:camera-core:1.6.1] C:\Users\Surat\.gradle\caches\9.4.1\transforms\02aa2989c3e00874315aff8e33b17e08\transformed\camera-core-1.6.1\AndroidManifest.xml:31:13-36
+66            android:exported="false" >
+66-->[androidx.camera:camera-core:1.6.1] C:\Users\Surat\.gradle\caches\9.4.1\transforms\02aa2989c3e00874315aff8e33b17e08\transformed\camera-core-1.6.1\AndroidManifest.xml:32:13-37
+67            <meta-data
+67-->[androidx.camera:camera-camera2:1.6.1] C:\Users\Surat\.gradle\caches\9.4.1\transforms\4e77510208213eec35d53ea22f2a7bf6\transformed\camera-camera2-1.6.1\AndroidManifest.xml:30:13-32:89
+68                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+68-->[androidx.camera:camera-camera2:1.6.1] C:\Users\Surat\.gradle\caches\9.4.1\transforms\4e77510208213eec35d53ea22f2a7bf6\transformed\camera-camera2-1.6.1\AndroidManifest.xml:31:17-103
+69                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+69-->[androidx.camera:camera-camera2:1.6.1] C:\Users\Surat\.gradle\caches\9.4.1\transforms\4e77510208213eec35d53ea22f2a7bf6\transformed\camera-camera2-1.6.1\AndroidManifest.xml:32:17-86
+70        </service>
+71
+72        <activity
+72-->[androidx.compose.ui:ui-tooling-android:1.11.2] C:\Users\Surat\.gradle\caches\9.4.1\transforms\3729ed15296698c3c8669a70a18a41ec\transformed\ui-tooling\AndroidManifest.xml:23:9-25:39
+73            android:name="androidx.compose.ui.tooling.PreviewActivity"
+73-->[androidx.compose.ui:ui-tooling-android:1.11.2] C:\Users\Surat\.gradle\caches\9.4.1\transforms\3729ed15296698c3c8669a70a18a41ec\transformed\ui-tooling\AndroidManifest.xml:24:13-71
+74            android:exported="true" />
+74-->[androidx.compose.ui:ui-tooling-android:1.11.2] C:\Users\Surat\.gradle\caches\9.4.1\transforms\3729ed15296698c3c8669a70a18a41ec\transformed\ui-tooling\AndroidManifest.xml:25:13-36
+75
+76        <service
+76-->[com.google.android.gms:play-services-mlkit-text-recognition-common:19.1.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\c9e8bf8d16e604c852690b97baafc219\transformed\play-services-mlkit-text-recognition-common-19.1.0\AndroidManifest.xml:9:9-15:19
+77            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+77-->[com.google.android.gms:play-services-mlkit-text-recognition-common:19.1.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\c9e8bf8d16e604c852690b97baafc219\transformed\play-services-mlkit-text-recognition-common-19.1.0\AndroidManifest.xml:10:13-91
+78            android:directBootAware="true"
+78-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:17:13-43
+79            android:exported="false" >
+79-->[com.google.android.gms:play-services-mlkit-text-recognition-common:19.1.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\c9e8bf8d16e604c852690b97baafc219\transformed\play-services-mlkit-text-recognition-common-19.1.0\AndroidManifest.xml:11:13-37
+80            <meta-data
+80-->[com.google.android.gms:play-services-mlkit-text-recognition-common:19.1.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\c9e8bf8d16e604c852690b97baafc219\transformed\play-services-mlkit-text-recognition-common-19.1.0\AndroidManifest.xml:12:13-14:85
+81                android:name="com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar"
+81-->[com.google.android.gms:play-services-mlkit-text-recognition-common:19.1.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\c9e8bf8d16e604c852690b97baafc219\transformed\play-services-mlkit-text-recognition-common-19.1.0\AndroidManifest.xml:13:17-114
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.android.gms:play-services-mlkit-text-recognition-common:19.1.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\c9e8bf8d16e604c852690b97baafc219\transformed\play-services-mlkit-text-recognition-common-19.1.0\AndroidManifest.xml:14:17-82
+83            <meta-data
+83-->[com.google.mlkit:vision-common:17.3.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\542215fa54bd0c739745b512e4cc8491\transformed\vision-common-17.3.0\AndroidManifest.xml:12:13-14:85
+84                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+84-->[com.google.mlkit:vision-common:17.3.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\542215fa54bd0c739745b512e4cc8491\transformed\vision-common-17.3.0\AndroidManifest.xml:13:17-124
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.mlkit:vision-common:17.3.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\542215fa54bd0c739745b512e4cc8491\transformed\vision-common-17.3.0\AndroidManifest.xml:14:17-82
+86            <meta-data
+86-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:20:13-22:85
+87                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+87-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:21:17-120
+88                android:value="com.google.firebase.components.ComponentRegistrar" />
+88-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:22:17-82
+89        </service>
+90
+91        <provider
+91-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:9:9-13:38
+92            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+92-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:10:13-78
+93            android:authorities="com.surat.cardscanner.sample.mlkitinitprovider"
+93-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:11:13-69
+94            android:exported="false"
+94-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:12:13-37
+95            android:initOrder="99" />
+95-->[com.google.mlkit:common:18.11.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\b47bbcabf3a722190b0470dde176763f\transformed\common-18.11.0\AndroidManifest.xml:13:13-35
+96
+97        <activity
+97-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\a38d015ecda7701d3cf7e3ffec0da268\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+98            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+98-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\a38d015ecda7701d3cf7e3ffec0da268\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+99            android:exported="false"
+99-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\a38d015ecda7701d3cf7e3ffec0da268\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+100            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+100-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\a38d015ecda7701d3cf7e3ffec0da268\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+101
+102        <meta-data
+102-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\bfcb77382128593382630ee4ef20466b\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+103            android:name="com.google.android.gms.version"
+103-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\bfcb77382128593382630ee4ef20466b\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+104            android:value="@integer/google_play_services_version" />
+104-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\bfcb77382128593382630ee4ef20466b\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+105
+106        <provider
+106-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\fd06291f490d3a42809e55f1d76fe52d\transformed\emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+107            android:name="androidx.startup.InitializationProvider"
+107-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\fd06291f490d3a42809e55f1d76fe52d\transformed\emoji2-1.4.0\AndroidManifest.xml:25:13-67
+108            android:authorities="com.surat.cardscanner.sample.androidx-startup"
+108-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\fd06291f490d3a42809e55f1d76fe52d\transformed\emoji2-1.4.0\AndroidManifest.xml:26:13-68
+109            android:exported="false" >
+109-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\fd06291f490d3a42809e55f1d76fe52d\transformed\emoji2-1.4.0\AndroidManifest.xml:27:13-37
+110            <meta-data
+110-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\fd06291f490d3a42809e55f1d76fe52d\transformed\emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+111                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+111-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\fd06291f490d3a42809e55f1d76fe52d\transformed\emoji2-1.4.0\AndroidManifest.xml:30:17-75
+112                android:value="androidx.startup" />
+112-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\fd06291f490d3a42809e55f1d76fe52d\transformed\emoji2-1.4.0\AndroidManifest.xml:31:17-49
+113            <meta-data
+113-->[androidx.lifecycle:lifecycle-process:2.10.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\298c84b06ce7206103dca21bdba8a3ba\transformed\lifecycle-process-2.10.0\AndroidManifest.xml:29:13-31:52
+114                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+114-->[androidx.lifecycle:lifecycle-process:2.10.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\298c84b06ce7206103dca21bdba8a3ba\transformed\lifecycle-process-2.10.0\AndroidManifest.xml:30:17-78
+115                android:value="androidx.startup" />
+115-->[androidx.lifecycle:lifecycle-process:2.10.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\298c84b06ce7206103dca21bdba8a3ba\transformed\lifecycle-process-2.10.0\AndroidManifest.xml:31:17-49
+116            <meta-data
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+117                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+117-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+118                android:value="androidx.startup" />
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+119        </provider>
+120
+121        <uses-library
+121-->[androidx.window:window:1.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\aeecb355d0c9ec2aa140ae1c3b61c57d\transformed\window-1.5.0\AndroidManifest.xml:23:9-25:40
+122            android:name="androidx.window.extensions"
+122-->[androidx.window:window:1.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\aeecb355d0c9ec2aa140ae1c3b61c57d\transformed\window-1.5.0\AndroidManifest.xml:24:13-54
+123            android:required="false" />
+123-->[androidx.window:window:1.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\aeecb355d0c9ec2aa140ae1c3b61c57d\transformed\window-1.5.0\AndroidManifest.xml:25:13-37
+124        <uses-library
+124-->[androidx.window:window:1.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\aeecb355d0c9ec2aa140ae1c3b61c57d\transformed\window-1.5.0\AndroidManifest.xml:26:9-28:40
+125            android:name="androidx.window.sidecar"
+125-->[androidx.window:window:1.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\aeecb355d0c9ec2aa140ae1c3b61c57d\transformed\window-1.5.0\AndroidManifest.xml:27:13-51
+126            android:required="false" />
+126-->[androidx.window:window:1.5.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\aeecb355d0c9ec2aa140ae1c3b61c57d\transformed\window-1.5.0\AndroidManifest.xml:28:13-37
+127
+128        <activity
+128-->[androidx.compose.ui:ui-test-manifest:1.11.2] C:\Users\Surat\.gradle\caches\9.4.1\transforms\65be5be84b8f2f5080e8e7e64a89b318\transformed\ui-test-manifest-1.11.2\AndroidManifest.xml:23:9-26:79
+129            android:name="androidx.activity.ComponentActivity"
+129-->[androidx.compose.ui:ui-test-manifest:1.11.2] C:\Users\Surat\.gradle\caches\9.4.1\transforms\65be5be84b8f2f5080e8e7e64a89b318\transformed\ui-test-manifest-1.11.2\AndroidManifest.xml:24:13-63
+130            android:exported="true"
+130-->[androidx.compose.ui:ui-test-manifest:1.11.2] C:\Users\Surat\.gradle\caches\9.4.1\transforms\65be5be84b8f2f5080e8e7e64a89b318\transformed\ui-test-manifest-1.11.2\AndroidManifest.xml:25:13-36
+131            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
+131-->[androidx.compose.ui:ui-test-manifest:1.11.2] C:\Users\Surat\.gradle\caches\9.4.1\transforms\65be5be84b8f2f5080e8e7e64a89b318\transformed\ui-test-manifest-1.11.2\AndroidManifest.xml:26:13-76
+132
+133        <receiver
+133-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+134            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+134-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+135            android:directBootAware="false"
+135-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+136            android:enabled="true"
+136-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+137            android:exported="true"
+137-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+138            android:permission="android.permission.DUMP" >
+138-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+139            <intent-filter>
+139-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+140                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+140-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+140-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+141            </intent-filter>
+142            <intent-filter>
+142-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+143                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+143-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+143-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+144            </intent-filter>
+145            <intent-filter>
+145-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+146                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+146-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+146-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+147            </intent-filter>
+148            <intent-filter>
+148-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+149                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+149-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+149-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ec8f565415d96bd60594ea35327d7523\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+150            </intent-filter>
+151        </receiver>
+152
+153        <service
+153-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+154            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+154-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+155            android:exported="false" >
+155-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+156            <meta-data
+156-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+157                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+157-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+158                android:value="cct" />
+158-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Surat\.gradle\caches\9.4.1\transforms\ae1887a147b92382c140a69af55a335b\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+159        </service>
+160        <service
+160-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Surat\.gradle\caches\9.4.1\transforms\5ef3a3ecf0804a104c6c4f4f8afa99a2\transformed\transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
+161            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+161-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Surat\.gradle\caches\9.4.1\transforms\5ef3a3ecf0804a104c6c4f4f8afa99a2\transformed\transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
+162            android:exported="false"
+162-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Surat\.gradle\caches\9.4.1\transforms\5ef3a3ecf0804a104c6c4f4f8afa99a2\transformed\transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
+163            android:permission="android.permission.BIND_JOB_SERVICE" >
+163-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Surat\.gradle\caches\9.4.1\transforms\5ef3a3ecf0804a104c6c4f4f8afa99a2\transformed\transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
+164        </service>
+165
+166        <receiver
+166-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Surat\.gradle\caches\9.4.1\transforms\5ef3a3ecf0804a104c6c4f4f8afa99a2\transformed\transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
+167            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+167-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Surat\.gradle\caches\9.4.1\transforms\5ef3a3ecf0804a104c6c4f4f8afa99a2\transformed\transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
+168            android:exported="false" />
+168-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Surat\.gradle\caches\9.4.1\transforms\5ef3a3ecf0804a104c6c4f4f8afa99a2\transformed\transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
+169    </application>
+170
+171</manifest>

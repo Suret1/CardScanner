@@ -1,0 +1,2 @@
+com.surat.cardscanner.sample
+style Theme_MaterialComponents_DayNight_NoActionBar

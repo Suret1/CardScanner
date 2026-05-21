@@ -1,0 +1,1 @@
+int style Theme_MaterialComponents_DayNight_NoActionBar 0x0
