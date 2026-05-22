@@ -1,16 +1,32 @@
 package com.surat.cardscanner
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.core.os.ConfigurationCompat
 import com.surat.cardscanner.model.CardResult
 import com.surat.cardscanner.model.ScannerConfig
 import com.surat.cardscanner.ui.CardScannerScreen
 
 class CardScannerActivity : ComponentActivity() {
+
+    override fun attachBaseContext(newBase: Context) {
+        val appLocale = ConfigurationCompat
+            .getLocales(newBase.applicationContext.resources.configuration)[0]
+        if (appLocale == null) {
+            super.attachBaseContext(newBase)
+            return
+        }
+        val config = Configuration(newBase.resources.configuration).apply {
+            setLocale(appLocale)
+        }
+        super.attachBaseContext(newBase.createConfigurationContext(config))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
