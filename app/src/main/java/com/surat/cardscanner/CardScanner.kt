@@ -1,20 +1,17 @@
 package com.surat.cardscanner
 
-import org.opencv.android.OpenCVLoader
-
 object CardScanner {
 
-    private var initialized = false
+    @Deprecated(
+        "init() artıq tələb olunmur. OpenCV library-dən çıxarılıb.",
+        level = DeprecationLevel.WARNING
+    )
+    fun init() = Unit
 
-    fun init() {
-        if (initialized) return
-        val success = OpenCVLoader.initLocal()
-        check(success) {
-            "CardScanner: OpenCV inisializasiyası uğursuz oldu. " +
-                    "Cihaz ABI-si dəstəklənmir: ${System.getProperty("os.arch")}"
-        }
-        initialized = true
-    }
-
-    fun isInitialized(): Boolean = initialized
+    @Deprecated(
+        "isInitialized() artıq istifadə olunmur.",
+        level = DeprecationLevel.WARNING,
+        replaceWith = ReplaceWith("true")
+    )
+    fun isInitialized(): Boolean = true
 }

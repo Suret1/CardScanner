@@ -14,7 +14,6 @@ class CardScannerActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        System.loadLibrary("opencv_java4")
 
         val config = intent.getParcelableExtraCompat(EXTRA_CONFIG, ScannerConfig::class.java)
             ?: ScannerConfig()

@@ -1,13 +1,12 @@
 # CardScanner Library
 
-Həm **embossed** (kabartma) həm **printed** (normal şrift) kredit kartlarını skan edən Android library.
+**Printed** kredit kartlarını ML Kit ilə skan edən Android library.
 
 - ✅ Jetpack Compose ilə yazılıb
 - ✅ View-based (legacy) Android app-lərlə uyğun
-- ✅ Android 16KB page size uyğun (OpenCV 4.9.0 + ML Kit)
+- ✅ Yalnız ML Kit — OpenCV asılılığı yoxdur
 - ✅ Kamera icazəsi idarəsi + Settings yönlənmə
 - ✅ Flash on/off
-- ✅ Embossed kart üçün CLAHE + Adaptive Threshold preprocessing
 - ✅ Luhn validasiyası
 - ✅ Multi-frame təsdiqləmə (false positive azaldır)
 
@@ -39,18 +38,6 @@ dependencies {
 
 ## İstifadə
 
-### Application.onCreate() içində init et
-```kotlin
-class MyApp : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        CardScanner.init()   // OpenCV-ni yüklə
-    }
-}
-```
-
----
-
 ### Compose app-də
 ```kotlin
 @Composable
@@ -60,7 +47,6 @@ fun PaymentScreen() {
             println("PAN: ${card.pan}")
             println("Formatlanmış: ${card.formattedPan}")  // "1234 5678 9012 3456"
             println("Kart markası: ${card.cardBrand}")     // VISA, MASTERCARD...
-            println("Kart tipi: ${card.cardType}")         // EMBOSSED, PRINTED
         }
     }
 
@@ -136,7 +122,6 @@ class PaymentActivity : AppCompatActivity() {
 | `showFlashButton`   | Boolean | true             | Flash button göstərilsin?             |
 | `confirmFrameCount` | Int     | 3                | Nə qədər ardıcıl frame eyni PAN verməlidir |
 | `vibrateOnSuccess`  | Boolean | true             | Uğurlu scan-da vibrasiya              |
-| `frameColor`        | Int     | Yaşıl            | Scan çərçivəsinin rəngi (ARGB)        |
 
 ---
 
@@ -147,7 +132,6 @@ data class CardResult(
     val pan: String,           // "1234567890123456"
     val formattedPan: String,  // "1234 5678 9012 3456"
     val cardBrand: CardBrand,  // VISA | MASTERCARD | AMEX | DISCOVER | UNKNOWN
-    val cardType: CardType,    // EMBOSSED | PRINTED | UNKNOWN
 )
 ```
 
@@ -156,30 +140,19 @@ data class CardResult(
 ## Texniki arxitektura
 
 ```
-CameraX Frame (500ms interval)
+CameraX Frame (300ms interval)
         │
         ▼
-CardDetector.findCardRegion()     ← Canny edge + kontur tapma
+cropToOverlayRegion()         ← Ekranda göstərilən kart sahəsi
         │
         ▼
-CardDetector.cropPanRegion()      ← Kartın 35-75% hündürlüyü
-        │
-        ▼
-CardPreprocessor.detectCardType() ← Sobel gradient variance
-        │
-   ┌────┴─────┐
-EMBOSSED    PRINTED
-   │           │
-CLAHE +    Otsu
-Adaptive   Threshold
-Threshold     │
-   └────┬─────┘
+CardDetector.cropPanRegion()  ← Kartın 35-75% hündürlüyü (PAN sahəsi)
         │
         ▼
 ML Kit TextRecognition OCR
         │
         ▼
-LuhnValidator.extractPANs()
+LuhnValidator.extractPANs()   ← Luhn alqoritmi ilə doğrulama
         │
         ▼
 MultiFrameAggregator (3x confirm)
@@ -192,7 +165,7 @@ CardResult callback
 
 ## Minimum tələblər
 
-- Android minSdk: **24** (Android 7.0)
-- targetSdk: **35** (Android 15) — 16KB page size uyğun
-- Kotlin: 1.9+
-- Compose BOM: 2024.06+
+- Android minSdk: **26** (Android 8.0)
+- targetSdk: **36**
+- Kotlin: 2.0+
+- Compose BOM: 2026.05+

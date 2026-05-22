@@ -83,7 +83,6 @@ dependencies {
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
     implementation(libs.mlkit.text.recognition)
-    implementation(libs.opencv)
     implementation(libs.accompanist.permissions)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
