@@ -29,6 +29,7 @@
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Свернуть"</string>
     <string msgid="8719607706653693137" name="androidx_compose_foundation_autofill">"Автозаполнение"</string>
     <string msgid="1150566100598813236" name="androidx_compose_ui_autofill">"Автозаполнение"</string>
+    <string name="app_name">CardScanner</string>
     <string msgid="881409763997275156" name="call_notification_answer_action">"Ответить"</string>
     <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Видео"</string>
     <string msgid="3229508546291798546" name="call_notification_decline_action">"Отклонить"</string>
@@ -131,6 +132,9 @@
     <string msgid="6610465462668679431" name="not_selected">"Не выбрано"</string>
     <string msgid="5941395253238309765" name="range_end">"Конец диапазона"</string>
     <string msgid="7097486360902471446" name="range_start">"Начало диапазона"</string>
+    <string name="scanner_hint_done">Карта считана</string>
+    <string name="scanner_hint_scanning">Поместите карту в рамку</string>
+    <string name="scanner_verify">Проверьте номер перед продолжением</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Поиск"</string>
     <string msgid="6043586758067023" name="selected">"Выбрано"</string>
     <string msgid="2792228137354697160" name="snackbar_pane_title">"Оповещение"</string>

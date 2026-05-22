@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-55:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-54:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\45cbc2e5317ce1a3264f0723304186ff\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/18297bbeacc9aac80384330aa723a6b1/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

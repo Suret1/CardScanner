@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-55:/values-v30/values-v30.xml",
+            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-54:/values-v30/values-v30.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\a98d85e45cac2ea7dd521440c28aeff9\\transformed\\material3\\res\\values-v30\\values-v30.xml",
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/e4fdbda6caebf7475a1d568c93619b6d/transformed/material3/res/values-v30/values-v30.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

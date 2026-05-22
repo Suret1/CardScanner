@@ -29,6 +29,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -49,18 +54,27 @@ import com.google.accompanist.permissions.shouldShowRationale
 @Composable
 internal fun CameraPermissionHandler(onGranted: @Composable () -> Unit) {
     val permissionState = rememberPermissionState(Manifest.permission.CAMERA)
+    var hasRequested by rememberSaveable { mutableStateOf(false) }
+
+    // Auto-launch system permission dialog on first entry
+    LaunchedEffect(Unit) {
+        if (!permissionState.status.isGranted && !permissionState.status.shouldShowRationale && !hasRequested) {
+            hasRequested = true
+            permissionState.launchPermissionRequest()
+        }
+    }
+
     when {
         permissionState.status.isGranted -> onGranted()
-        permissionState.status.shouldShowRationale ->
-            PermissionRationaleDialog(
-                onConfirm = { permissionState.launchPermissionRequest() },
-                onDismiss = { },
-            )
-        else -> PermissionDeniedContent(
-            isPermanentlyDenied = !permissionState.status.shouldShowRationale &&
-                    !permissionState.status.isGranted,
+        permissionState.status.shouldShowRationale -> PermissionRationaleDialog(
+            onConfirm = { permissionState.launchPermissionRequest() },
+            onDismiss = { },
+        )
+        hasRequested -> PermissionDeniedContent(
+            isPermanentlyDenied = true,
             onRequestPermission = { permissionState.launchPermissionRequest() },
         )
+        // else: system dialog is visible — render nothing
     }
 }
 

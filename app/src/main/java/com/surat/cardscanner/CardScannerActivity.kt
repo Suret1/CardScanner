@@ -3,6 +3,7 @@ package com.surat.cardscanner
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.surat.cardscanner.model.CardResult
@@ -13,7 +14,10 @@ class CardScannerActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle     = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+        )
 
         val config = intent.getParcelableExtraCompat(EXTRA_CONFIG, ScannerConfig::class.java)
             ?: ScannerConfig()
@@ -34,7 +38,7 @@ class CardScannerActivity : ComponentActivity() {
     }
 
     companion object {
-        const val EXTRA_CONFIG = "az.cardscanner.EXTRA_CONFIG"
-        const val EXTRA_RESULT = "az.cardscanner.EXTRA_RESULT"
+        const val EXTRA_CONFIG = "com.surat.cardscanner.EXTRA_CONFIG"
+        const val EXTRA_RESULT = "com.surat.cardscanner.EXTRA_RESULT"
     }
 }

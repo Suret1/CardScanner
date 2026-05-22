@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CardScanner</string>
+    <string name="scanner_hint_scanning">Kartı çərçivəyə yerləşdirin</string>
+    <string name="scanner_hint_done">Kart oxundu</string>
+    <string name="scanner_verify">Davam etməzdən əvvəl nömrəni yoxlayın</string>
+</resources>

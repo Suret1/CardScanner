@@ -1,15 +1,28 @@
+# Gradle
 *.iml
 .gradle
-/local.properties
+**/build/
+/captures
+
+# Local machine config
+local.properties
+keystore.properties
+
+# Signing keys
+*.keystore
+*.jks
+
+# Native build
+.externalNativeBuild
+.cxx
+
+# macOS
+.DS_Store
+
+# IntelliJ / Android Studio
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties

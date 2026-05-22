@@ -1,8 +1,8 @@
-com.surat.cardscanner.sample-pngs-0 C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\build\generated\res\pngs\debug
-com.surat.cardscanner.sample-updated_navigation_xml-1 C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\build\generated\updated_navigation_xml\debug
-com.surat.cardscanner.sample-packageDebugResources-2 C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.surat.cardscanner.sample-packageDebugResources-3 C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.surat.cardscanner.sample-debug-4 C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\build\intermediates\merged_res\debug\mergeDebugResources
-com.surat.cardscanner.sample-debug-5 C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\debug\res
-com.surat.cardscanner.sample-main-6 C:\Users\Surat\AndroidStudioProjects\CardScanner\CardScanner\sample\src\main\res
-gradleHome-0 C:\Users\Surat\.gradle
+com.surat.cardscanner.sample-pngs-0 /Users/surat/AndroidStudioProjects/CardScanner/sample/build/generated/res/pngs/debug
+com.surat.cardscanner.sample-updated_navigation_xml-1 /Users/surat/AndroidStudioProjects/CardScanner/sample/build/generated/updated_navigation_xml/debug
+com.surat.cardscanner.sample-packageDebugResources-2 /Users/surat/AndroidStudioProjects/CardScanner/sample/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.surat.cardscanner.sample-packageDebugResources-3 /Users/surat/AndroidStudioProjects/CardScanner/sample/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.surat.cardscanner.sample-debug-4 /Users/surat/AndroidStudioProjects/CardScanner/sample/build/intermediates/merged_res/debug/mergeDebugResources
+com.surat.cardscanner.sample-debug-5 /Users/surat/AndroidStudioProjects/CardScanner/sample/src/debug/res
+com.surat.cardscanner.sample-main-6 /Users/surat/AndroidStudioProjects/CardScanner/sample/src/main/res
+gradleHome-0 /Users/surat/.gradle

@@ -1,171 +1,157 @@
-# CardScanner Library
+# CardScanner
 
-**Printed** kredit kartlarını ML Kit ilə skan edən Android library.
+An Android library for scanning **printed** credit/debit cards using ML Kit — no OpenCV dependency.
 
-- ✅ Jetpack Compose ilə yazılıb
-- ✅ View-based (legacy) Android app-lərlə uyğun
-- ✅ Yalnız ML Kit — OpenCV asılılığı yoxdur
-- ✅ Kamera icazəsi idarəsi + Settings yönlənmə
-- ✅ Flash on/off
-- ✅ Luhn validasiyası
-- ✅ Multi-frame təsdiqləmə (false positive azaldır)
+[![](https://jitpack.io/v/Suret1/CardScanner.svg)](https://jitpack.io/#Suret1/CardScanner)
 
 ---
 
-## Quraşdırma
+## Features
 
-### 1. `settings.gradle.kts`-ə repo əlavə et
+- Jetpack Compose UI with edge-to-edge support
+- Compatible with View-based (legacy) Android apps via `ActivityResultContract`
+- Vertical PAN detection — reads cards where the number is printed top-to-bottom
+- Camera permission flow with automatic system dialog and Settings fallback
+- Flash toggle
+- Luhn validation
+- Multi-frame confirmation to eliminate false positives
+- Localized UI — Azerbaijani, Russian, English (follows system language)
+
+---
+
+## Installation
+
+### 1. Add JitPack to `settings.gradle.kts`
+
 ```kotlin
 dependencyResolutionManagement {
     repositories {
-        maven { url = uri("https://jitpack.io") }  // JitPack istifadə edirsinizsə
-        // yaxud local:
-        // maven { url = uri("../cardscanner-lib") }
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
     }
 }
 ```
 
-### 2. `build.gradle.kts`-ə dependency əlavə et
+### 2. Add the dependency
+
 ```kotlin
 dependencies {
-    implementation("com.github.YourUser:cardscanner:1.0.0")
-    // yaxud local module:
-    // implementation(project(":cardscanner-lib"))
+    implementation("com.github.Suret1:CardScanner:1.0.0")
 }
 ```
 
 ---
 
-## İstifadə
+## Usage
 
-### Compose app-də
+### Jetpack Compose
+
 ```kotlin
-@Composable
-fun PaymentScreen() {
-    val launcher = rememberLauncherForActivityResult(CardScannerContract()) { result ->
-        result?.let { card ->
-            println("PAN: ${card.pan}")
-            println("Formatlanmış: ${card.formattedPan}")  // "1234 5678 9012 3456"
-            println("Kart markası: ${card.cardBrand}")     // VISA, MASTERCARD...
-        }
+val launcher = rememberLauncherForActivityResult(CardScannerContract()) { result ->
+    result?.let { card ->
+        println(card.formattedPan)   // "4111 1111 1111 1111"
+        println(card.cardBrand)      // VISA
     }
+}
 
-    Button(
-        onClick = {
-            launcher.launch(
-                ScannerConfig(
-                    title              = "Ödəniş kartı",
-                    showFlashButton    = true,
-                    confirmFrameCount  = 3,
-                    vibrateOnSuccess   = true,
-                )
-            )
-        }
-    ) {
-        Text("Kartı skan et")
-    }
+Button(onClick = { launcher.launch(ScannerConfig()) }) {
+    Text("Scan card")
 }
 ```
 
----
+### Fragment
 
-### View-based (Fragment) app-də
 ```kotlin
-class PaymentFragment : Fragment() {
+private val scanLauncher = registerForActivityResult(CardScannerContract()) { result ->
+    result?.let { binding.panView.text = it.formattedPan }
+}
 
-    private val scanLauncher = registerForActivityResult(CardScannerContract()) { result ->
-        result?.let { card ->
-            binding.panTextView.text = card.formattedPan
-        }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.scanButton.setOnClickListener {
-            scanLauncher.launch(ScannerConfig())
-        }
-    }
+scanButton.setOnClickListener {
+    scanLauncher.launch(ScannerConfig(confirmFrameCount = 2))
 }
 ```
 
-### View-based (Activity) app-də
+### Activity
+
 ```kotlin
-class PaymentActivity : AppCompatActivity() {
+private val scanLauncher = registerForActivityResult(CardScannerContract()) { result ->
+    result?.let { panEditText.setText(it.formattedPan) }
+}
 
-    private val scanLauncher = registerForActivityResult(CardScannerContract()) { result ->
-        result?.let { card ->
-            panEditText.setText(card.formattedPan)
-        }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_payment)
-
-        scanButton.setOnClickListener {
-            scanLauncher.launch(
-                ScannerConfig(title = "Kartı skan edin")
-            )
-        }
-    }
+scanButton.setOnClickListener {
+    scanLauncher.launch(ScannerConfig())
 }
 ```
 
 ---
 
-## ScannerConfig parametrləri
+## ScannerConfig
 
-| Parametr            | Tip     | Default          | Açıqlama                              |
-|---------------------|---------|------------------|---------------------------------------|
-| `title`             | String  | "Kartı skan edin"| Scan ekranının başlığı                |
-| `showFlashButton`   | Boolean | true             | Flash button göstərilsin?             |
-| `confirmFrameCount` | Int     | 3                | Nə qədər ardıcıl frame eyni PAN verməlidir |
-| `vibrateOnSuccess`  | Boolean | true             | Uğurlu scan-da vibrasiya              |
+```kotlin
+ScannerConfig(
+    showFlashButton   = true,  // show/hide flash toggle button
+    confirmFrameCount = 3,     // consecutive frames required to confirm a PAN
+    vibrateOnSuccess  = true,  // haptic feedback on successful scan
+)
+```
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `showFlashButton` | Boolean | `true` | Show the flash toggle button |
+| `confirmFrameCount` | Int | `3` | Consecutive frames that must agree on the same PAN. Lower = faster, higher = fewer false positives |
+| `vibrateOnSuccess` | Boolean | `true` | Short vibration when a card is successfully scanned |
 
 ---
 
-## CardResult modeli
+## CardResult
 
 ```kotlin
 data class CardResult(
-    val pan: String,           // "1234567890123456"
-    val formattedPan: String,  // "1234 5678 9012 3456"
-    val cardBrand: CardBrand,  // VISA | MASTERCARD | AMEX | DISCOVER | UNKNOWN
+    val pan: String,            // "4111111111111111"
+    val formattedPan: String,   // "4111 1111 1111 1111"
+    val cardBrand: CardBrand,   // VISA | MASTERCARD | AMEX | DISCOVER | UNKNOWN
+    val cardType: CardType,     // PRINTED | UNKNOWN
 )
 ```
 
 ---
 
-## Texniki arxitektura
+## How it works
 
 ```
-CameraX Frame (300ms interval)
-        │
-        ▼
-cropToOverlayRegion()         ← Ekranda göstərilən kart sahəsi
-        │
-        ▼
-CardDetector.cropPanRegion()  ← Kartın 35-75% hündürlüyü (PAN sahəsi)
-        │
-        ▼
-ML Kit TextRecognition OCR
-        │
-        ▼
-LuhnValidator.extractPANs()   ← Luhn alqoritmi ilə doğrulama
-        │
-        ▼
-MultiFrameAggregator (3x confirm)
-        │
-        ▼
-CardResult callback
+CameraX frame  (every 300 ms)
+       │
+       ▼
+cropToOverlayRegion()        — crops the visible card area from the frame
+       │
+       ├──► original orientation
+       ├──► rotated 90° CW    — handles PANs printed top-to-bottom
+       └──► rotated 90° CCW   — handles PANs printed bottom-to-top
+              │
+              ▼
+       CardDetector.cropPanRegion()   — isolates the middle 40% strip (PAN zone)
+              │
+              ▼
+       ML Kit TextRecognition
+              │
+              ▼
+       LuhnValidator.extractPANs()    — validates candidates with Luhn algorithm
+              │
+              ▼
+       MultiFrameAggregator           — confirms after N consistent frames
+              │
+              ▼
+       CardResult callback
 ```
 
 ---
 
-## Minimum tələblər
+## Requirements
 
-- Android minSdk: **26** (Android 8.0)
-- targetSdk: **36**
-- Kotlin: 2.0+
-- Compose BOM: 2026.05+
+| Requirement | Version |
+|---|---|
+| Min SDK | 26 (Android 8.0) |
+| Target SDK | 36 |
+| Kotlin | 2.0+ |
+| Compose BOM | 2026.05+ |

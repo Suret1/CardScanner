@@ -1,6 +1,7 @@
 package com.surat.cardscanner.core
 
 import android.graphics.Bitmap
+import android.graphics.Matrix
 import android.util.Log
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
@@ -20,13 +21,18 @@ internal class CardOcrProcessor(confirmFrameCount: Int = 3) {
         if (now - lastScanTime < scanIntervalMs) return
         lastScanTime = now
 
-        val overlayRegion = cropToOverlayRegion(frame)
-        Log.d(TAG, "frame: ${frame.width}x${frame.height} → overlay: ${overlayRegion.width}x${overlayRegion.height}")
+        val region = cropToOverlayRegion(frame)
 
-        val panZone = CardDetector.cropPanRegion(overlayRegion)
-        Log.d(TAG, "cropPanRegion → ${panZone.width}x${panZone.height}")
+        runOcr(CardDetector.cropPanRegion(region), onResult)
 
-        runOcr(panZone, onResult)
+        runOcr(CardDetector.cropPanRegion(region.rotate(-90f)), onResult)
+
+        runOcr(CardDetector.cropPanRegion(region.rotate(270f)), onResult)
+    }
+
+    private fun Bitmap.rotate(degrees: Float): Bitmap {
+        val m = Matrix().apply { postRotate(degrees) }
+        return Bitmap.createBitmap(this, 0, 0, width, height, m, true)
     }
 
     private fun runOcr(bitmap: Bitmap, onResult: (CardResult) -> Unit) {
@@ -88,8 +94,6 @@ internal class CardOcrProcessor(confirmFrameCount: Int = 3) {
         if (top < 0 || left < 0 || left + overlayW > w || top + overlayH > h) return frame
         return Bitmap.createBitmap(frame, left, top, overlayW, overlayH)
     }
-
-    fun reset() = aggregator.reset()
 
     fun close() = recognizer.close()
 

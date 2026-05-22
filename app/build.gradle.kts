@@ -49,19 +49,9 @@ afterEvaluate {
         publications {
             register<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.github.surat"
-                artifactId = "card-scanner"
+                groupId = "com.github.Suret1"
+                artifactId = "CardScanner"
                 version = "1.0.0"
-            }
-        }
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/surat/CardScanner")
-                credentials {
-                    username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
-                    password = project.findProperty("gpr.token") as String? ?: System.getenv("GITHUB_TOKEN")
-                }
             }
         }
     }

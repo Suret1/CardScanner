@@ -537,6 +537,9 @@
     <string name="not_selected">Not selected</string>
     <string name="range_end">"Range end"</string>
     <string name="range_start">"Range start"</string>
+    <string name="scanner_hint_done">Card scanned</string>
+    <string name="scanner_hint_scanning">Place card in the frame</string>
+    <string name="scanner_verify">Check the number before continuing</string>
     <string name="search_menu_title">Search</string>
     <string name="selected">Selected</string>
     <string name="snackbar_pane_title">Alert</string>
@@ -2742,14 +2745,6 @@
     <declare-styleable name="ButtonBarLayout">
         
         <attr format="boolean" name="allowStacking"/>
-    </declare-styleable>
-    <declare-styleable name="CameraBridgeViewBase">
-       <attr format="boolean" name="show_fps"/>
-       <attr format="integer" name="camera_id">
-          <enum name="any" value="-1"/>
-          <enum name="back" value="99"/>
-          <enum name="front" value="98"/>
-       </attr>
     </declare-styleable>
     <declare-styleable name="Capability">
         

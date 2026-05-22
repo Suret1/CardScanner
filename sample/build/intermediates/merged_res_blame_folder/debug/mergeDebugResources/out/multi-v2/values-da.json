@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-55:/values-da/values-da.xml",
+            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-54:/values-da/values-da.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\7b5bf9d8e2b7766105a1044431ac2069\\transformed\\ui\\res\\values-da\\values-da.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "107,203,295,375,470,569,651,728,817,906,988,1069,1153,1223,1314,1388,1460,1531,1609,1676",
-                        "endColumns": "95,91,79,94,98,81,76,88,88,81,80,83,69,90,73,71,70,77,66,123",
-                        "endOffsets": "198,290,370,465,564,646,723,812,901,983,1064,1148,1218,1309,1383,1455,1526,1604,1671,1795"
-                    },
-                    "to": {
-                        "startLines": "30,38,39,58,59,60,61,62,129,130,131,132,134,135,136,137,138,140,141,142",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2861,3684,3776,6058,6153,6252,6334,6411,13659,13748,13830,13911,14075,14145,14236,14310,14382,14554,14632,14699",
-                        "endColumns": "95,91,79,94,98,81,76,88,88,81,80,83,69,90,73,71,70,77,66,119",
-                        "endOffsets": "2952,3771,3851,6148,6247,6329,6406,6495,13743,13825,13906,13990,14140,14231,14305,14377,14448,14627,14694,14814"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\bfcb77382128593382630ee4ef20466b\\transformed\\play-services-basement-18.4.0\\res\\values-da\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "122",
-                        "endOffsets": "317"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "4851",
-                        "endColumns": "126",
-                        "endOffsets": "4973"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\a98d85e45cac2ea7dd521440c28aeff9\\transformed\\material3\\res\\values-da\\values-da.xml",
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/e4fdbda6caebf7475a1d568c93619b6d/transformed/material3/res/values-da/values-da.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\a38d015ecda7701d3cf7e3ffec0da268\\transformed\\play-services-base-18.5.0\\res\\values-da\\values.xml",
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/63c366f983e29d5f8e88b50d078b1fea/transformed/play-services-base-18.5.0/res/values-da/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\45cbc2e5317ce1a3264f0723304186ff\\transformed\\appcompat-1.6.1\\res\\values-da\\values-da.xml",
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/caad8f0b09d9ca0227efaf990cd23550/transformed/core-1.18.0/res/values-da/values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,350,448,555,664,782",
+                        "endColumns": "95,101,96,97,106,108,117,100",
+                        "endOffsets": "146,248,345,443,550,659,777,878"
+                    },
+                    "to": {
+                        "startLines": "31,32,33,34,35,36,37,139",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "2957,3053,3155,3252,3350,3457,3566,14453",
+                        "endColumns": "95,101,96,97,106,108,117,100",
+                        "endOffsets": "3048,3150,3247,3345,3452,3561,3679,14549"
+                    }
+                },
+                {
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/18297bbeacc9aac80384330aa723a6b1/transformed/appcompat-1.6.1/res/values-da/values-da.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -89,7 +72,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\5f12c9e5d4ba2e2d314db49bb0e232e9\\transformed\\foundation\\res\\values-da\\values-da.xml",
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/995089948fa2a1215ad1c312cef30ac3/transformed/play-services-basement-18.4.0/res/values-da/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "122",
+                        "endOffsets": "317"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "4851",
+                        "endColumns": "126",
+                        "endOffsets": "4973"
+                    }
+                },
+                {
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/ddb008e8240bf0abae519409c47c544b/transformed/ui/res/values-da/values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "107,203,295,375,470,569,651,728,817,906,988,1069,1153,1223,1314,1388,1460,1531,1609,1676",
+                        "endColumns": "95,91,79,94,98,81,76,88,88,81,80,83,69,90,73,71,70,77,66,123",
+                        "endOffsets": "198,290,370,465,564,646,723,812,901,983,1064,1148,1218,1309,1383,1455,1526,1604,1671,1795"
+                    },
+                    "to": {
+                        "startLines": "30,38,39,58,59,60,61,62,129,130,131,132,134,135,136,137,138,140,141,142",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2861,3684,3776,6058,6153,6252,6334,6411,13659,13748,13830,13911,14075,14145,14236,14310,14382,14554,14632,14699",
+                        "endColumns": "95,91,79,94,98,81,76,88,88,81,80,83,69,90,73,71,70,77,66,119",
+                        "endOffsets": "2952,3771,3851,6148,6247,6329,6406,6495,13743,13825,13906,13990,14140,14231,14305,14377,14448,14627,14694,14814"
+                    }
+                },
+                {
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/8a151ad4a1078439835fac4ae76d41b9/transformed/foundation/res/values-da/values-da.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -103,23 +120,6 @@
                         "startOffsets": "2757,14819,14909",
                         "endColumns": "103,89,86",
                         "endOffsets": "2856,14904,14991"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\cddf8515e6deff3a4b7a2a4192634271\\transformed\\core-1.18.0\\res\\values-da\\values-da.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,151,253,350,448,555,664,782",
-                        "endColumns": "95,101,96,97,106,108,117,100",
-                        "endOffsets": "146,248,345,443,550,659,777,878"
-                    },
-                    "to": {
-                        "startLines": "31,32,33,34,35,36,37,139",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "2957,3053,3155,3252,3350,3457,3566,14453",
-                        "endColumns": "95,101,96,97,106,108,117,100",
-                        "endOffsets": "3048,3150,3247,3345,3452,3561,3679,14549"
                     }
                 }
             ]

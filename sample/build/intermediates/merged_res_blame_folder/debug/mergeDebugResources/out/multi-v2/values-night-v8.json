@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-55:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.surat.cardscanner.sample-mergeDebugResources-54:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Surat\\.gradle\\caches\\9.4.1\\transforms\\45cbc2e5317ce1a3264f0723304186ff\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "/Users/surat/.gradle/caches/9.4.1/transforms/18297bbeacc9aac80384330aa723a6b1/transformed/appcompat-1.6.1/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

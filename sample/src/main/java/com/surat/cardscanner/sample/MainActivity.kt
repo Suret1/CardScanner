@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
-                        Button(onClick = { launcher.launch(ScannerConfig(confirmFrameCount = 1)) }) {
+                        Button(onClick = { launcher.launch(ScannerConfig()) }) {
                             Text("Kartı skan et")
                         }
 

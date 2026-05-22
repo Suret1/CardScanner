@@ -3,24 +3,16 @@ package com.surat.cardscanner.ui
 import android.graphics.Bitmap
 import android.os.VibrationEffect
 import android.os.Vibrator
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.scaleIn
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -36,8 +28,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.surat.cardscanner.R
 import com.surat.cardscanner.core.CardOcrProcessor
 import com.surat.cardscanner.model.CardResult
 import com.surat.cardscanner.model.ScannerConfig
@@ -48,7 +44,6 @@ import com.surat.cardscanner.ui.components.ScanOverlay
 import com.surat.cardscanner.ui.theme.CardScannerTheme
 import com.surat.cardscanner.ui.theme.ScannerBackground
 import com.surat.cardscanner.ui.theme.ScannerOnBackground
-import com.surat.cardscanner.ui.theme.ScannerPrimary
 import kotlinx.coroutines.delay
 
 @Composable
@@ -91,12 +86,12 @@ internal fun CardScannerScreen(
         CameraPermissionHandler(
             onGranted = {
                 ScannerContent(
-                    config        = config,
-                    isFlashOn     = isFlashOn,
-                    scanState     = scanState,
+                    config = config,
+                    isFlashOn = isFlashOn,
+                    scanState = scanState,
                     onFlashToggle = { isFlashOn = !isFlashOn },
-                    onBack        = onBack,
-                    onFrameReady  = { bitmap ->
+                    onBack = onBack,
+                    onFrameReady = { bitmap ->
                         if (scanState is ScanState.Scanning) {
                             processor.processFrame(bitmap, onCardDetected)
                         }
@@ -116,58 +111,75 @@ private fun ScannerContent(
     onBack: () -> Unit,
     onFrameReady: (Bitmap) -> Unit,
 ) {
-    Box(modifier = Modifier.fillMaxSize().background(ScannerBackground)) {
+    val isCompleted = scanState is ScanState.Completed
+
+    BoxWithConstraints(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(ScannerBackground)
+    ) {
+        val cardW = maxWidth * 0.88f
+        val cardH = cardW * (1f / 1.586f)
+        val cardTop = (maxHeight - cardH) * 0.5f
+        val cardBottom = cardTop + cardH
 
         CameraPreview(
-            modifier     = Modifier.fillMaxSize(),
-            isFlashOn    = isFlashOn,
+            modifier = Modifier.fillMaxSize(),
+            isFlashOn = isFlashOn,
             onFrameReady = onFrameReady,
         )
 
         ScanOverlay(
-            modifier   = Modifier.fillMaxSize(),
-            isScanning = scanState is ScanState.Scanning,
-            hint       = when (scanState) {
-                is ScanState.Scanning   -> "Kartı çərçivəyə yerləşdirin"
-                is ScanState.Completed  -> "✓  Kart oxundu"
-            },
+            modifier = Modifier.fillMaxSize(),
+            isScanning = !isCompleted,
         )
 
         TopBar(
-            title    = config.title,
-            onBack   = onBack,
-            modifier = Modifier.align(Alignment.TopStart).fillMaxWidth(),
+            onBack = onBack,
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .fillMaxWidth(),
+        )
+
+        Text(
+            text = stringResource(
+                if (isCompleted) R.string.scanner_hint_done else R.string.scanner_hint_scanning
+            ),
+            color = ScannerOnBackground.copy(alpha = 0.85f),
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .padding(top = (72.dp + cardTop) * 0.5f)
+                .padding(horizontal = 32.dp),
+        )
+
+        Text(
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .padding(top = cardBottom + 20.dp)
+                .padding(horizontal = 32.dp),
+            text = stringResource(R.string.scanner_verify),
+            color = ScannerOnBackground.copy(alpha = 0.65f),
+            style = MaterialTheme.typography.bodySmall,
+            textAlign = TextAlign.Center,
         )
 
         if (config.showFlashButton) {
             FlashButton(
-                isOn     = isFlashOn,
-                onClick  = onFlashToggle,
+                isOn = isFlashOn,
+                onClick = onFlashToggle,
                 modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .statusBarsPadding()
-                    .padding(top = 8.dp, end = 16.dp),
-            )
-        }
-
-        AnimatedVisibility(
-            visible  = scanState is ScanState.Completed,
-            enter    = fadeIn() + scaleIn(),
-            exit     = fadeOut(),
-            modifier = Modifier.align(Alignment.BottomCenter),
-        ) {
-            SuccessBadge(
-                pan      = (scanState as? ScanState.Completed)?.result?.formattedPan ?: "",
-                modifier = Modifier
-                    .padding(bottom = 48.dp)
-                    .padding(horizontal = 24.dp),
+                    .align(Alignment.BottomCenter)
+                    .navigationBarsPadding()
+                    .padding(bottom = 32.dp),
             )
         }
     }
 }
 
 @Composable
-private fun TopBar(title: String, onBack: () -> Unit, modifier: Modifier = Modifier) {
+private fun TopBar(onBack: () -> Unit, modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .background(Color.Transparent)
@@ -177,47 +189,10 @@ private fun TopBar(title: String, onBack: () -> Unit, modifier: Modifier = Modif
     ) {
         IconButton(onClick = onBack) {
             Icon(
-                imageVector    = Icons.AutoMirrored.Filled.ArrowBack,
+                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = "Geri",
-                tint           = ScannerOnBackground,
+                tint = ScannerOnBackground,
             )
-        }
-        Text(
-            text      = title,
-            style     = MaterialTheme.typography.titleMedium,
-            color     = ScannerOnBackground,
-            fontWeight = FontWeight.SemiBold,
-        )
-    }
-}
-
-@Composable
-private fun SuccessBadge(pan: String, modifier: Modifier = Modifier) {
-    Card(
-        modifier  = modifier,
-        shape     = RoundedCornerShape(16.dp),
-        colors    = CardDefaults.cardColors(containerColor = ScannerPrimary.copy(alpha = 0.95f)),
-        elevation = CardDefaults.cardElevation(8.dp),
-    ) {
-        Row(
-            modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp),
-            verticalAlignment      = Alignment.CenterVertically,
-            horizontalArrangement  = Arrangement.spacedBy(12.dp),
-        ) {
-            Text("✓", style = MaterialTheme.typography.titleLarge, color = Color.Black)
-            Column {
-                Text(
-                    text  = "Kart uğurla oxundu",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = Color.Black.copy(alpha = 0.7f),
-                )
-                Text(
-                    text       = pan,
-                    style      = MaterialTheme.typography.titleMedium,
-                    color      = Color.Black,
-                    fontWeight = FontWeight.Bold,
-                )
-            }
         }
     }
 }
@@ -225,4 +200,17 @@ private fun SuccessBadge(pan: String, modifier: Modifier = Modifier) {
 private sealed class ScanState {
     data object Scanning : ScanState()
     data class Completed(val result: CardResult) : ScanState()
+}
+
+@Preview(name = "Scanning", showSystemUi = true, widthDp = 390, heightDp = 844)
+@Composable
+private fun PreviewScannerContentScanning() {
+    ScannerContent(
+        config = ScannerConfig(),
+        isFlashOn = false,
+        scanState = ScanState.Scanning,
+        onFlashToggle = {},
+        onBack = {},
+        onFrameReady = {},
+    )
 }

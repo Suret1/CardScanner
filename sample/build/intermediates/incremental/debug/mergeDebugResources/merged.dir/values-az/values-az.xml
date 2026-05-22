@@ -29,6 +29,7 @@
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Yığcamlaşdırın"</string>
     <string msgid="8719607706653693137" name="androidx_compose_foundation_autofill">"Avto-doldurma"</string>
     <string msgid="1150566100598813236" name="androidx_compose_ui_autofill">"Avto-doldurma"</string>
+    <string name="app_name">CardScanner</string>
     <string msgid="881409763997275156" name="call_notification_answer_action">"Cavab verin"</string>
     <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Video"</string>
     <string msgid="3229508546291798546" name="call_notification_decline_action">"İmtina edin"</string>
@@ -131,6 +132,9 @@
     <string msgid="6610465462668679431" name="not_selected">"Seçilməyib"</string>
     <string msgid="5941395253238309765" name="range_end">"Sıranın sonu"</string>
     <string msgid="7097486360902471446" name="range_start">"Sıranın başlanğıcı"</string>
+    <string name="scanner_hint_done">Kart oxundu</string>
+    <string name="scanner_hint_scanning">Kartı çərçivəyə yerləşdirin</string>
+    <string name="scanner_verify">Davam etməzdən əvvəl nömrəni yoxlayın</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Axtarın"</string>
     <string msgid="6043586758067023" name="selected">"Seçilib"</string>
     <string msgid="2792228137354697160" name="snackbar_pane_title">"Xəbərdarlıq"</string>

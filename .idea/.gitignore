@@ -1,3 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Local / personal IDE state
+/appInsightsSettings.xml
+/deploymentTargetSelector.xml
+/qaplug_profiles.xml
+/firebender/
