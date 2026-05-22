@@ -12,7 +12,6 @@ kotlin = "2.3.21"
 composeBom = "2026.05.01"
 cameraX = "1.6.1"
 mlkitTextRecognition = "19.0.1"
-opencv = "4.13.0"
 accompanist = "0.37.3"
 
 [libraries]
@@ -37,7 +36,6 @@ camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.r
 camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraX" }
 camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "cameraX" }
 mlkit-text-recognition = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition", version.ref = "mlkitTextRecognition" }
-opencv = { group = "org.opencv", name = "opencv", version.ref = "opencv" }
 accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist" }
 
 
