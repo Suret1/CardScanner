@@ -27,8 +27,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import com.surat.cardscanner.R
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -141,8 +142,9 @@ private fun ScannerContent(
         )
 
         Text(
-            text = if (isCompleted) scannerString(az = "Kart oxundu", ru = "Карта считана", en = "Card scanned")
-                   else scannerString(az = "Kartı çərçivəyə yerləşdirin", ru = "Поместите карту в рамку", en = "Place card in the frame"),
+            text = stringResource(
+                if (isCompleted) R.string.scanner_hint_done else R.string.scanner_hint_scanning
+            ),
             color = ScannerOnBackground.copy(alpha = 0.85f),
             style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
             textAlign = TextAlign.Center,
@@ -157,11 +159,7 @@ private fun ScannerContent(
                 .align(Alignment.TopCenter)
                 .padding(top = cardBottom + 20.dp)
                 .padding(horizontal = 32.dp),
-            text = scannerString(
-                az = "Davam etməzdən əvvəl nömrəni yoxlayın",
-                ru = "Проверьте номер перед продолжением",
-                en = "Check the number before continuing",
-            ),
+            text = stringResource(R.string.scanner_verify),
             color = ScannerOnBackground.copy(alpha = 0.65f),
             style = MaterialTheme.typography.bodySmall,
             textAlign = TextAlign.Center,
@@ -202,16 +200,6 @@ private fun TopBar(onBack: () -> Unit, modifier: Modifier = Modifier) {
 private sealed class ScanState {
     data object Scanning : ScanState()
     data class Completed(val result: CardResult) : ScanState()
-}
-
-@Composable
-private fun scannerString(az: String, ru: String, en: String): String {
-    val lang = LocalConfiguration.current.locales[0].language
-    return when (lang) {
-        "az" -> az
-        "ru" -> ru
-        else -> en
-    }
 }
 
 @Preview(name = "Scanning", showSystemUi = true, widthDp = 390, heightDp = 844)
