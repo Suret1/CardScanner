@@ -1,6 +1,6 @@
 # CardScanner
 
-An Android library for scanning **printed** credit/debit cards using ML Kit — no OpenCV dependency.
+An Android library for scanning **printed** credit/debit cards using ML Kit
 
 [![](https://jitpack.io/v/Suret1/CardScanner.svg)](https://jitpack.io/#Suret1/CardScanner)
 
