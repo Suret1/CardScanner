@@ -1,37 +1,20 @@
 package com.surat.cardscanner
 
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.core.os.ConfigurationCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.surat.cardscanner.model.CardResult
 import com.surat.cardscanner.model.ScannerConfig
 import com.surat.cardscanner.ui.CardScannerScreen
 
-class CardScannerActivity : ComponentActivity() {
-
-    override fun attachBaseContext(newBase: Context) {
-        val appLocale = ConfigurationCompat
-            .getLocales(newBase.applicationContext.resources.configuration)[0]
-        if (appLocale == null) {
-            super.attachBaseContext(newBase)
-            return
-        }
-        val config = Configuration(newBase.resources.configuration).apply {
-            setLocale(appLocale)
-        }
-        super.attachBaseContext(newBase.createConfigurationContext(config))
-    }
-
+class CardScannerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge(
-            statusBarStyle     = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+            statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
         )
 
@@ -40,9 +23,9 @@ class CardScannerActivity : ComponentActivity() {
 
         setContent {
             CardScannerScreen(
-                config   = config,
+                config = config,
                 onResult = { result -> finishWithResult(result) },
-                onBack   = { setResult(RESULT_CANCELED); finish() },
+                onBack = { setResult(RESULT_CANCELED); finish() },
             )
         }
     }
@@ -57,4 +40,5 @@ class CardScannerActivity : ComponentActivity() {
         const val EXTRA_CONFIG = "com.surat.cardscanner.EXTRA_CONFIG"
         const val EXTRA_RESULT = "com.surat.cardscanner.EXTRA_RESULT"
     }
+
 }

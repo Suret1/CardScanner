@@ -74,6 +74,7 @@ dependencies {
     implementation(libs.camera.view)
     implementation(libs.mlkit.text.recognition)
     implementation(libs.accompanist.permissions)
+    implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
