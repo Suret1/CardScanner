@@ -1,7 +1,10 @@
 package com.surat.cardscanner
 
 import android.content.Intent
+import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
+import android.os.LocaleList
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -9,8 +12,18 @@ import androidx.appcompat.app.AppCompatActivity
 import com.surat.cardscanner.model.CardResult
 import com.surat.cardscanner.model.ScannerConfig
 import com.surat.cardscanner.ui.CardScannerScreen
+import java.util.Locale
 
 class CardScannerActivity : AppCompatActivity() {
+
+    override fun applyOverrideConfiguration(overrideConfiguration: Configuration?) {
+        if (overrideConfiguration != null) {
+            val locale = Locale.getDefault()
+            overrideConfiguration.setLocales(LocaleList(locale))
+        }
+        super.applyOverrideConfiguration(overrideConfiguration)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge(
