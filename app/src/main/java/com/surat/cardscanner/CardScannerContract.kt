@@ -6,12 +6,14 @@ import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
 import com.surat.cardscanner.model.CardResult
 import com.surat.cardscanner.model.ScannerConfig
+import java.util.Locale
 
 class CardScannerContract : ActivityResultContract<ScannerConfig, CardResult?>() {
 
     override fun createIntent(context: Context, input: ScannerConfig): Intent =
         Intent(context, CardScannerActivity::class.java).apply {
             putExtra(CardScannerActivity.EXTRA_CONFIG, input)
+            putExtra(CardScannerActivity.EXTRA_LOCALE, Locale.getDefault().language)
         }
 
     override fun parseResult(resultCode: Int, intent: Intent?): CardResult? {

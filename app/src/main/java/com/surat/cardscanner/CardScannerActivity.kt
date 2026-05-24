@@ -18,7 +18,8 @@ class CardScannerActivity : AppCompatActivity() {
 
     override fun applyOverrideConfiguration(overrideConfiguration: Configuration?) {
         if (overrideConfiguration != null) {
-            val locale = Locale.getDefault()
+            val language = intent?.getStringExtra(EXTRA_LOCALE)
+            val locale = if (!language.isNullOrEmpty()) Locale(language) else Locale.getDefault()
             overrideConfiguration.setLocales(LocaleList(locale))
         }
         super.applyOverrideConfiguration(overrideConfiguration)
@@ -52,6 +53,7 @@ class CardScannerActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_CONFIG = "com.surat.cardscanner.EXTRA_CONFIG"
         const val EXTRA_RESULT = "com.surat.cardscanner.EXTRA_RESULT"
+        const val EXTRA_LOCALE = "com.surat.cardscanner.EXTRA_LOCALE"
     }
 
 }
